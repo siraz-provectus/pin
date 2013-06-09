@@ -1,0 +1,41 @@
+<div style="position: static;" class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a data-target=".navbar-inverse-collapse" data-toggle="collapse" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <form action="" class="navbar-search pull-left">
+          <input type="text" placeholder="Поиск" class="search-query span2" style="margin-right: 10px;">
+        </form>
+        <%= link_to 'PinClone', root_url,  class: "brand" %>
+        <ul class="nav pull-right">
+          <li><%= link_to 'Добавить+', "#" %></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">О нас <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'О проекте', "#" %></li>
+              <li><%= link_to 'Правила', "#" %></li>
+              <li><%= link_to 'Поддержка', "#" %></li>
+              <li><%= link_to 'Вопросы', "#" %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Юзер <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Настройки', "#" %></li>
+              <li><%= link_to 'Мои Списки', "#" %></li>
+              <li><%= link_to 'Мои Подписки', "#" %></li>
+              <li><%= link_to 'Мои Подписчики', "#" %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Выйти', "#" %></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
