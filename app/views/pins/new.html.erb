@@ -1,0 +1,16 @@
+<h2>Добавление нового ПИНа</h2>
+
+<%= form_for(@pin) do |f| %>
+
+  <div><%= f.label :title, "Название" %><br />
+  <%= f.text_field :title, :autofocus => true %></div>
+
+  <div><%= f.label :price, "Цена" %><br />
+  <%= f.text_field :price %></div>
+
+  <div><%= f.label :url, "Ссылка" %><br />
+  <%= f.text_field :url %></div>
+
+  <div><%= f.submit "Добавить", class: "btn btn-info" %>
+  </div>
+<% end %>

@@ -12,8 +12,10 @@
         </form>
         <%= link_to 'PinClone', root_url,  class: "brand" %>
         <ul class="nav pull-right">
-          <li><%= link_to 'Добавить+', "#" %></li>
-          <li class="divider-vertical"></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Добавить+', new_pin_url %></li>
+            <li class="divider-vertical"></li>
+          <% end %>
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">О нас <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -23,17 +25,21 @@
               <li><%= link_to 'Вопросы', "#" %></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Юзер <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'Настройки', "#" %></li>
-              <li><%= link_to 'Мои Списки', "#" %></li>
-              <li><%= link_to 'Мои Подписки', "#" %></li>
-              <li><%= link_to 'Мои Подписчики', "#" %></li>
-              <li class="divider"></li>
-              <li><%= link_to 'Выйти', "#" %></li>
-            </ul>
-          </li>
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= current_user.first_name %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Настройки', "#" %></li>
+                <li><%= link_to 'Мои Списки', "#" %></li>
+                <li><%= link_to 'Мои Подписки', "#" %></li>
+                <li><%= link_to 'Мои Подписчики', "#" %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Выйти', "#" %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to 'Войти', new_user_session_path %></li>
+          <% end %>
         </ul>
       </div><!-- /.nav-collapse -->
     </div>

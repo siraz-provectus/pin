@@ -1,1 +1,15 @@
-<h3>PinClone<h3>
+<% unless user_signed_in? %>
+  <div class="hero-unit top_margin">
+    <h3>Мы любим интересные и красивые вещи!</h3>
+    <p>И знаем где их можно купить.</p>
+    <p><%= link_to "Зарегистрироваться", new_user_registration_path, class: "btn btn-success" %> <%= link_to "Войти", new_user_session_path, class: "btn btn-info" %></p>
+  </div>
+<% end %>
+ <% @pins.each do |pin| %>
+    <div class="well span pin_block">
+  <%= link_to "Купить", pin.url, class: "btn btn-warning"%><br><br>
+  <h6 class="well pin_title">
+  	<%=pin.title%>
+  </h6>
+</div>
+  <% end %>
