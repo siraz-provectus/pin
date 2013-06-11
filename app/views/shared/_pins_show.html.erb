@@ -1,0 +1,12 @@
+<div class="well span pin_block top_margin">
+  <%= link_to "Купить", pin.url, class: "btn btn-warning"%><br><br>
+  <%= image_tag(pin.image_url(:thumb), class: "thumbnail") if pin.image? %>
+  <h6 class="well pin_title">
+	    <%=pin.title%>
+  </h6>
+  <% user = User.find(pin.user_id)%>
+  <% if user.avatar? %>
+  	<%= link_to image_tag(user.avatar_url(:small),class: "small_ava"), user_url(user)%>
+  	<%end%>
+  	<%= link_to user.first_name, user_url(user) %>
+</div>

@@ -7,9 +7,12 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name
+  attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
 
   validates :first_name, :last_name, presence: true
+
+  mount_uploader :avatar, AvatarUploader
+
 end

@@ -1,11 +1,16 @@
   <div class="span3">
     <div class="well sidebar-nav top_margin">
-      <h3>Sidebar</h3>
+      <h4>Лучшие пользователи</h4><br />
       <ul class="nav nav-list">
-        <li class="nav-header">Sidebar</li>
-        <li><%= link_to "Link1", "/path1"  %></li>
-        <li><%= link_to "Link2", "/path2"  %></li>
-        <li><%= link_to "Link3", "/path3"  %></li>
+        <% i=0
+         while i < 3 %>
+        <li class = "clear">
+          <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") if @best_users[i].avatar? %>
+          <%= link_to @best_users[i].first_name, user_url(@best_users[i]) %>
+        </li>
+        <% i+=1
+            end %>
+        
       </ul>
     </div><!--/.well -->
   </div><!--/span-->

@@ -1,9 +1,12 @@
 <h2>Добавление нового ПИНа</h2>
 
-<%= form_for(@pin) do |f| %>
+<%= form_for @pin, :html => {:multipart => true} do |f| %>
 
   <div><%= f.label :title, "Название" %><br />
   <%= f.text_field :title, :autofocus => true %></div>
+
+  <div><%= f.label :image, "Фото" %><br />
+  <%= f.file_field :image %></div>
 
   <div><%= f.label :price, "Цена" %><br />
   <%= f.text_field :price %></div>

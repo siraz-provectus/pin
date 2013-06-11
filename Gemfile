@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'russian'
 gem 'carrierwave'
+gem "rmagick"
 
 
 group :assets do

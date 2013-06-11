@@ -1,0 +1,12 @@
+<div class="well top_margin">
+  <p>
+    <%if @user.avatar? %>
+      <%= link_to image_tag(@user.avatar_url(:small),class: "small_ava thumbnail avatar_left"), user_url(@user)  %>
+    <%end%>
+    <%= link_to  [@user.first_name,@user.last_name].join(' '), user_url(@user) %>
+  </p>
+  <% @pins = @user.pins %>
+  <% @pins.each do |pin| %>
+  <%= render 'shared/pins_show', pin: pin  %>
+  <% end %>
+</div>
