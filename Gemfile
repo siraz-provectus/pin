@@ -6,6 +6,7 @@ gem 'devise'
 gem 'russian'
 gem 'carrierwave'
 gem "rmagick"
+gem 'heroku'
 
 
 group :assets do
@@ -21,4 +22,8 @@ group :development do
 end
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg', '0.12.2'
+end
 
