@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   private
   	def best_user
-  		@best_users=User.all.sort! { |a,b| b.pins.count <=> a.pins.count }
+  		User.all.sort! { |a,b| b.pins.count <=> a.pins.count }
+  		@best_users=User.limit(3)
   	end
 end
