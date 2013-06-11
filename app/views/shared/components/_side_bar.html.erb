@@ -4,13 +4,15 @@
       <ul class="nav nav-list">
         <% i=0
          while i < 3 %>
+        <% @best_users[i].any? %>
         <li class = "clear">
-          <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") if @best_users[i].avatar? %>
+          <% if @best_users[i].avatar? %>
+          <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") %>
           <%= link_to @best_users[i].first_name, user_url(@best_users[i]) %>
         </li>
+        <% end %>
         <% i+=1
-            end %>
-        
+            end %>        
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
