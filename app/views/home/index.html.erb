@@ -1,4 +1,9 @@
-<% unless user_signed_in? %>
-  <%= render 'home/unsigned_user'%>
+<% if user_signed_in? %>
+  <%= render 'shared/signed_user'%>
+<% else %>
+  <%= render 'shared/unsigned_user'%>
 <% end %>
+<div>
+	<h3> Все новости </h3>
+</div>
 <%= render 'home/form'%>
