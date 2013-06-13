@@ -4,9 +4,8 @@
   <h6 class="well pin_title">
 	    <%=pin.title%>
   </h6>
-  <% user = User.find(pin.user_id)%>
-  <% if user.avatar? %>
-  	<%= link_to image_tag(user.avatar_url(:small),class: "small_ava"), user_url(user)%>
+  <% if @user[pin.user_id-1].avatar? %>
+  	<%= link_to image_tag(@user[pin.user_id-1].avatar_url(:small),class: "small_ava"), user_url(@user[pin.user_id-1])%>
   	<%end%>
-  	<%= link_to user.first_name, user_url(user) %>
+  	<%= link_to @user[pin.user_id-1].first_name, user_url(@user[pin.user_id-1]) %>
 </div>

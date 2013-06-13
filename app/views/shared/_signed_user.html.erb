@@ -1,0 +1,9 @@
+<% if current_user.friendships.count > 0 %>
+  <h3>Новости от друзей</h3>
+  <% @friend_pin.each do |pin| %>
+    <% if current_user.friendships.find_by_friend_id(pin.user_id)!= nil %>
+			<%= render 'shared/pins', pin: pin %>
+	<% end %> 
+  <% end %>
+  <div class='clear'> </div>
+<% end %>

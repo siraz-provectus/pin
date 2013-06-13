@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
+  has_many :friends, through: :friendships
+  has_many :friendships, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
 

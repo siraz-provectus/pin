@@ -2,16 +2,20 @@
     <div class="well sidebar-nav top_margin">
       <h4>Лучшие пользователи</h4><br />
       <ul class="nav nav-list">
-        <% @best_users.each_index  do |i| %>
-          <% if i < 3 %>
-            <li class = "clear">
-              <% if @best_users[i].avatar? %>
-                <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") %>
-              <% end %>
-              <%= link_to @best_users[i].first_name + ' ('+  @best_users[i].pins.count.to_s + ')', user_url(@best_users[i]) %>
-            </li>
-          <% end %>
-        <% end %>        
+        <% len = @best_users.length%>
+        <% i = 0 %>
+        <% if len > 3 %>
+          <% len=3 %>
+        <% end %>
+        <% while i < len  %>
+          <li class = "clear">
+            <% if @best_users[i].avatar? %>
+              <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") %>
+            <% end %>
+            <%= link_to @best_users[i].first_name + ' ('+  @best_users[i].pins.count.to_s + ')', user_url(@best_users[i]) %>
+          </li>
+          <% i+=1 %>
+        <% end %>       
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
