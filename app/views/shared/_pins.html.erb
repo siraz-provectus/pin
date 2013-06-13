@@ -4,8 +4,8 @@
   <h6 class="well pin_title">
 	    <%=pin.title%>
   </h6>
-  <% if @users[pin.user_id-1].avatar? %>
-  	<%= link_to image_tag(@users[pin.user_id-1].avatar_url(:small),class: "small_ava"), user_url(@users[pin.user_id-1])%>
+  <% if @user[pin.user_id-1].avatar? %>
+  	<%= link_to image_tag(@user[pin.user_id-1].avatar_url(:small),class: "small_ava"), user_url(@user[pin.user_id-1])%>
   	<%end%>
-  	<%= link_to @users[pin.user_id-1].first_name, user_url(@users[pin.user_id-1]) %>
+  	<%= link_to @user[pin.user_id-1].first_name, user_url(@user[pin.user_id-1]) %>
 </div>

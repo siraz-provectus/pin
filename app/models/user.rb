@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
-  has_many :friends, through: :friendships, conditions: "status = 'accepted'"
-  has_many :requested_friends, through: :friendships, source: :friend, conditions: "status = 'requested'", :order => :created_at
-  has_many :pending_friends, through: :friendships, source: :friend, conditions: "status = 'pending'", :order => :created_at
+  has_many :friends, through: :friendships
   has_many :friendships, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
