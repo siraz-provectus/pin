@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 		@pins = Pin.all
 
 		if user_signed_in? 
-		  @friend_pins = @pins.sort! { |a,b| b.created_at <=> a.created_at} 
+		  @sort_pins = @pins.sort! { |a,b| b.created_at <=> a.created_at} 
 		end
 	end
 end
