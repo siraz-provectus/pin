@@ -12,8 +12,8 @@
        <%= link_to  "Отписаться", friendship_url(@user), method: "delete", class: 'btn btn-danger pull-right' %> 
     <% end %>
   </p>
-  <% @pins = @user.pins %>
-  <% @pins.each do |pin| %>
-  <%= render 'shared/pins_show', pin: pin  %>
+
+  <% @user.pins.each do |pin| %>
+    <%= render 'shared/pins', pin: pin  %>
   <% end %>
 </div>
