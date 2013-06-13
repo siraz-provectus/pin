@@ -1,0 +1,13 @@
+<% if current_user.friendships.find_by_friend_id(user).blank? %>
+  <% unless user == current_user %>
+    <%= link_to  "Подписаться", 
+      friendships_path(friend_id: user), 
+      method: "post", remote: true, 
+      class: 'btn btn-danger pull-right', id: 'subscribe_link' %> 
+  <% end %>
+<% else %>
+  <%= link_to  "Отписаться", 
+    friendship_url(user), 
+    method: "delete", remote: true, 
+    class: 'btn btn-danger pull-right', id: 'unsubscribe_link' %> 
+<% end %>

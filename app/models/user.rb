@@ -10,13 +10,22 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
+
+  has_many :friendships
   has_many :friends, through: :friendships
-  has_many :friendships, dependent: :destroy
+
+  has_many :inverse_friendships, 
+    class_name: "Friendship", 
+    foreign_key: :friend_id
+
+  has_many :inverse_friends, 
+    through: :inverse_friendships, 
+    source: :user
 
   validates :first_name, :last_name, presence: true
 
   mount_uploader :avatar, AvatarUploader
-
+  
   def full_name
     [ first_name, last_name ].join(' ')
   end
