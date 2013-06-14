@@ -10,7 +10,7 @@
         <% while i < len  %>
           <li class = "clear">
             <% if @best_users[i].avatar? %>
-              <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user avatar_left thumbnail") %>
+              <%= image_tag(@best_users[i].avatar_url(:small),class: "best_user _left thumbnail") %>
             <% end %>
             <%= link_to @best_users[i].first_name + ' ('+  @best_users[i].pins.count.to_s + ')', user_url(@best_users[i]) %>
           </li>

@@ -7,7 +7,7 @@
   <div><%= f.label :last_name, "Фамилия" %><br />
   <%= f.text_field :last_name %></div><br />
   <div>
-  <%= image_tag(@user.avatar_url(:thumb), class: "thumbnail avatar_left") if @user.avatar? %></div>
+  <%= image_tag(@user.avatar_url(:thumb), class: "thumbnail _left") if @user.avatar? %></div>
   <div><%= f.label :avatar, "Аватар" %>
   <%= f.file_field :avatar %></div>
   <div class="clear"></div><br />

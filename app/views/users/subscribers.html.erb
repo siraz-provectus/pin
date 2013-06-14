@@ -3,13 +3,12 @@
   <h2>Мои подписчики</h2>
 </div>
 <% @user.inverse_friends.each do |friend| %>
-  <div class="well span1 pin_block ">
-  	<% if friend.avatar? %>
-   	  <%= link_to user_url(friend) do %>
-      <%= image_tag(friend.avatar_url(:thumb), class: "thumbnail user_subscr") %>
-    <% end %>
-  <%end%>
-
-  <%= link_to friend.full_name, user_url(friend) %>
-</div>
+  <div class="well span1 pin_block _left">
+	<% if friend.avatar? %>
+	  <%= link_to user_url(friend) do %>
+	    <%= image_tag(friend.avatar_url(:thumb), class: "thumbnail user_subscr avatar_left") %>
+	  <% end %>
+	<%end%>
+	<%= link_to friend.full_name, user_url(friend) %>
+  </div>
 <% end %>
