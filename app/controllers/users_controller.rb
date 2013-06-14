@@ -15,4 +15,13 @@ class UsersController < ApplicationController
   		render 'edit'
   	end
   end
+
+  def subscriptions
+    @user = User.find(params[:id])
+  end
+
+  def subscribers
+    @user = User.find(params[:id])
+  end
+
 end

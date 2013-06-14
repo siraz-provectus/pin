@@ -1,0 +1,15 @@
+<%= render 'user', user: @user %>
+<div class="page-header">
+  <h2>Мои подписки</h2>
+</div>
+<% @user.friends.each do |friend| %>
+  <div class="well span1 pin_block ">
+  	<% if friend.avatar? %>
+   	  <%= link_to user_url(friend) do %>
+      <%= image_tag(friend.avatar_url(:thumb), class: "thumbnail user_subscr") %>
+    <% end %>
+  <%end%>
+
+  <%= link_to friend.full_name, user_url(friend) %>
+</div>
+<% end %>

@@ -1,9 +1,7 @@
 <% if current_user.friendships.count > 0 %>
   <h3>Новости от друзей</h3>
-  <% @sort_pins.each do |pin| %>
-    <% if pin.user.inverse_friends.present? %>
-			<%= render 'shared/pins', pin: pin %>
-	<% end %> 
+  <% @friendpins.each do |pin| %>
+	<%= render 'shared/pins', pin: pin %>
   <% end %>
   <div class='clear'> </div>
 <% end %>

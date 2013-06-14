@@ -6,4 +6,6 @@
 <div>
 	<h3> Все новости </h3>
 </div>
-<%= render 'home/form'%>
+<% @pins.each do |pin| %>
+  <%= render 'shared/pins', pin: pin %>
+<% end %>
