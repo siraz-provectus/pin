@@ -6,7 +6,10 @@ PinClone::Application.routes.draw do
       get :subscriptions, :subscribers
     end
   end
-  resources :pins, only: [:index, :new, :create]
+  resources :pins, only: [:index, :new, :create] do
+    resources :comments, only: [:create]
+  end
+  resources :comments, only: [:destroy]
   resources :friendships, only: [:destroy, :create]
 
    root to: 'home#index'

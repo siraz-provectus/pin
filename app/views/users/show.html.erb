@@ -1,4 +1,4 @@
 <%= render 'user', user: @user %>
 <% @user.pins.each do |pin| %>
-  <%= render 'shared/pins', pin: pin  %>
+  <%= render 'pins/pins', pin: pin  %>
 <% end %>

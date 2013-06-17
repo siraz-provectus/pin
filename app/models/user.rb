@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
+  has_many :comments
 
   has_many :friendships
   has_many :friends, through: :friendships

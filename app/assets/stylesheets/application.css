@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+ .back_color{
+ 	background-color: #DCDCDC
+ }
  .top_margin {
  	margin-top: 30px;
  }
@@ -32,7 +35,7 @@
  .news {
  	margin-top: -40px;
  }
- ._left{
+._left{
 	float: left;
 }
  

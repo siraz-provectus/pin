@@ -10,6 +10,11 @@
       <%= image_tag(pin.user.avatar_url(:small), class: "small_ava") %>
     <% end %>
   <%end%>
-
   <%= link_to pin.user.full_name, user_url(pin.user) %>
+  <div class = 'clear'></div>
+  <div class="page-header bottom_margin"></div>
+  <%=render 'comments/comments', pin: pin %>
+  <% if user_signed_in? %>
+   <%= render 'comments/add_comment_action', pin: pin%>
+  <% end %>
 </div>
