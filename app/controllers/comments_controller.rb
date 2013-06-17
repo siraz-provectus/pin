@@ -1,15 +1,18 @@
 #encoding: utf-8
 class CommentsController < ApplicationController
+
+  before_filter :authenticate_user!
+
 	def create
-		@pin = Pin.find(params[:pin_id])
-		@comment = @pin.comments.new(params[:comment])
-    	@comment.user = current_user
-		@comment.save
-		
+		@comment = current_user.comments.create!(
+      params[:comment].merge({ pin_id: params[:pin_id] } )
+		)
 	end
+
 	def destroy
-		@comment = Comment.find(params[:id])
-		@pin = Pin.find(@comment.pin_id)
+		@comment = current_user.comments.find(params[:id])
 		@comment.destroy		
+
+		render nothing: true
 	end
 end

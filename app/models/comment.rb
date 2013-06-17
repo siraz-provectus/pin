@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :pin
 
-  validates :comment, presence: true
+  validates :comment, :pin_id, presence: true
 end

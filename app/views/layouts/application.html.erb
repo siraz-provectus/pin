@@ -31,6 +31,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-
+    <%= javascript_tag "$(function() { #{yield(:javascript_code)} });" if content_for? :javascript_code %>
   </body>
 </html>

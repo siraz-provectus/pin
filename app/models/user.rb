@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :avatar
 
   has_many :pins
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :friendships
   has_many :friends, through: :friendships
@@ -23,11 +23,6 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, 
     through: :inverse_friendships, 
     source: :user
-
- # has_many :inverse_friendpins, 
-  #  through: :inverse_friends, 
- #   source: :pin
-
 
   validates :first_name, :last_name, presence: true
 

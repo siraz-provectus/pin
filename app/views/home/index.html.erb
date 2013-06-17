@@ -9,3 +9,7 @@
 <% @pins.each do |pin| %>
   <%= render 'pins/pins', pin: pin %>
 <% end %>
+
+<%= content_for :javascript_code do %>
+  CommentsManagement.initialize();
+<% end %>

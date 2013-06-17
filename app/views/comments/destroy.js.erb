@@ -1,4 +1,1 @@
-$("#pin_<%= @pin.id %>").replaceWith("<%= escape_javascript(render(
-  'comments/comments', 
-  pin: @pin
-)) %>");
+$("#comment_<%= @comment.id %>").remove();

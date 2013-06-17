@@ -1,7 +1,5 @@
-$("#pin_<%= @pin.id %>").replaceWith("<%= escape_javascript(render(
-  'comments/comments', 
-  pin: @pin
+$( "#pin_<%= @comment.pin_id %> .comments_container form" ).before("<%= escape_javascript(render(
+  'comments/comment', com: @comment
 )) %>");
-$("#comment_<%= @pin.id %>").replaceWith("<%= escape_javascript(render(
-  'comments/comment_form'
-)) %>");
+
+$( "#pin_<%= @comment.pin_id %> .comments_container form textarea" ).val('');

@@ -1,4 +1,4 @@
-<div class="well span pin_block top_margin">
+<div class="well span pin_block top_margin" id="<%= dom_id(pin) %>">
   <%= link_to "Купить", pin.url, class: "btn btn-warning"%><br><br>
   <%= image_tag(pin.image_url(:thumb), class: "thumbnail") if pin.image? %>
   <h6 class="well pin_title">
@@ -13,8 +13,9 @@
   <%= link_to pin.user.full_name, user_url(pin.user) %>
   <div class = 'clear'></div>
   <div class="page-header bottom_margin"></div>
-  <%=render 'comments/comments', pin: pin %>
-  <% if user_signed_in? %>
-   <%= render 'comments/add_comment_action', pin: pin%>
-  <% end %>
+
+  <div class='comments_container'>
+    <%= render 'comments/comments', pin: pin %>
+    <%= render 'comments/add_comment_action', pin: pin if user_signed_in? %>
+  </div>
 </div>

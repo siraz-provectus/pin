@@ -4,7 +4,7 @@
       <%= image_tag(current_user.avatar_url(:small), class: "comment_top _left") %>
     <% end %>
   <%end%>
-  <%= f.text_area :comment, class: 'add_comment', placeholder: "Добавить коментарий", id: "comment_" + pin.id.to_s%>
+  <%= f.text_area :comment, class: 'add_comment', placeholder: "Добавить коментарий" %>
   <div class = 'clear'></div>
-  <%= f.submit "Отправить", class: "btn btn-info" %>
+  <%= f.submit "Отправить", class: "btn btn-info hidden" %>
 <% end %>
