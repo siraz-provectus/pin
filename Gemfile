@@ -5,6 +5,7 @@ gem 'devise'
 gem 'russian'
 gem 'carrierwave'
 gem "rmagick"
+gem 'kaminari'
 
 
 group :assets do

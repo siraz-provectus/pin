@@ -6,6 +6,7 @@
 <div>
 	<h3> Все новости </h3>
 </div>
+<%= paginate @pins %>
 <% @pins.each do |pin| %>
   <%= render 'pins/pins', pin: pin %>
 <% end %>
