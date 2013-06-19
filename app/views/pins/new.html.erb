@@ -8,6 +8,10 @@
   <div><%= f.label :image, "Фото" %><br />
   <%= f.file_field :image %></div>
 
+  <div><%= f.label :category_ids, 'Категория' %><br />
+    <%= f.collection_select(:category_ids, Category.all,
+                  :id, :title, {:prompt => 'Выберите категорию'})%></div>
+
   <div><%= f.label :price, "Цена" %><br />
   <%= f.text_field :price %></div>
 

@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :price, :title, :url, :image
+  attr_accessible :price, :title, :url, :image, :category_ids
   
   belongs_to :user
   belongs_to :friend
