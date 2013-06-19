@@ -4,6 +4,9 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   belongs_to :friend
   has_many :comments
+  
+  has_many :pincategories
+  has_many :categories, through: :pincategories
 
   validates :title, :url, presence: true
 

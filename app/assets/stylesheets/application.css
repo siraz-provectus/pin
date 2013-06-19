@@ -38,4 +38,11 @@
 ._left{
 	float: left;
 }
+.dropdown-menu.larg_menu{
+	min-width: 350px;
+}
+.second_column {
+	margin-top: -27px;
+	float: right;
+}
  

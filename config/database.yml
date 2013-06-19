@@ -3,11 +3,11 @@ development:
   encoding: utf8
   database: pin_clone_dev
   username: root
-  password: root
+  password: '1234'
 
 test:
   adapter: mysql2
   encoding: utf8
   database: pin_clone_test
   username: root
-  password: root
+  password: '1234'

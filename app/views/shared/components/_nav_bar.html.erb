@@ -7,6 +7,21 @@
         <% end %>
         <%= link_to 'PinClone', root_url,  class: "brand" %>
         <ul class="nav pull-right">
+          <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#" >Лучшее<b class="caret"></b></a>
+              <ul class="larg_menu dropdown-menu">
+                <li><%= link_to 'Женская мода', root_url+'?category_id=1', class: '_left' %><%= link_to 'Компьютеры и софт', root_url+'?category_id=5', class: "second_column"%> </li>
+                <li><%= link_to 'Мужская мода', root_url+'?category_id=2', class: '_left' %><%= link_to 'Книги', root_url+'?category_id=6', class: "second_column"%></li>
+                <li><%= link_to 'Для дома и офиса', root_url+'?category_id=3', class: '_left' %><%= link_to 'Подарки', root_url+'?category_id=7', class: "second_column"%></li>
+                <li><%= link_to 'Электроника', root_url+'?category_id=4', class: '_left' %><%= link_to 'Детский мир', root_url+'?category_id=8', class: "second_column"%></li>
+                <li><%= link_to 'Авто и мото', root_url+'?category_id=9', class: '_left' %><%= link_to 'Домашние питомцы', root_url+'?category_id=10', class: "second_column"%> </li>
+                <li><%= link_to 'Красота и здоровье', root_url+'?category_id=11', class: '_left' %><%= link_to 'Handmade', root_url+'?category_id=13', class: "second_column"%></li>
+                <li><%= link_to 'Спорт и активный отдых', root_url+'?category_id=12', class: '_left' %><%= link_to 'Гаджеты', root_url+'?category_id=15', class: "second_column"%></li>
+                <li><%= link_to 'Бытовая техника', root_url+'?category_id=14', class: '_left' %><%= link_to 'Музыка видео', root_url+'?category_id=16', class: "second_column"%></li>
+                <li><%= link_to 'Настольные игры, пазлы', root_url+'?category_id=17', class: '_left' %><%= link_to 'Искусство', root_url+'?category_id=19', class: "second_column"%></li>
+                <li><%= link_to 'Игры и приставки', root_url+'?category_id=18', class: '_left' %><%= link_to 'Прочее', root_url+'?category_id=20', class: "second_column"%></li>
+              </ul>
+            </li>
           <% if user_signed_in? %>
             <li><%= link_to 'Добавить+', new_pin_url %></li>
             <li class="divider-vertical"></li>
