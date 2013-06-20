@@ -1,6 +1,6 @@
 <% if current_user.friendships.count > 0 %>
   <h3>Новости от друзей</h3>
-  <%= paginate @friendpins %>
+  <%= paginate @friendpins, param_name: "friend_page" %>
   <% @friendpins.each do |pin| %>
 	<%= render 'pins/pins', pin: pin %>
   <% end %>

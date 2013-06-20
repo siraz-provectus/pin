@@ -14,5 +14,6 @@ PinClone::Application.routes.draw do
 
    root to: 'home#index'
    match '/search',  to: 'search#search'
+   match '/allpins',  to: 'home#paginate_pins'
 
 end

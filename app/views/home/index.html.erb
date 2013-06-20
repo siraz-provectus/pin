@@ -6,10 +6,12 @@
 <div>
 	<h3> Все новости </h3>
 </div>
-<%= paginate @pins %>
-<% @pins.each do |pin| %>
-  <%= render 'pins/pins', pin: pin %>
-<% end %>
+<div id = 'paginator'>
+  <%= paginate @pins, params: {controller: 'home', action: 'paginate_pins'},param_name: :pins_page, remote: true %>
+</div>
+<div id = 'allpins'>
+	<%= render 'home/allpins', pins: @pins %>
+</div>
 
 <%= content_for :javascript_code do %>
   CommentsManagement.initialize();
