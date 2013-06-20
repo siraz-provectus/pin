@@ -7,13 +7,15 @@ PinClone::Application.routes.draw do
     end
   end
   resources :pins, only: [:index, :new, :create] do
+    get :load, on: :collection
     resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]
-  resources :friendships, only: [:destroy, :create]
+  resources :friendships, only: [:destroy, :create] do
+    get :load, on: :collection
+  end
 
-   root to: 'home#index'
-   match '/search',  to: 'search#search'
-   match '/allpins',  to: 'home#paginate_pins'
+  match '/search',  to: 'search#search'
 
+  root to: 'home#index'
 end

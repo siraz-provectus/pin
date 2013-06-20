@@ -3,6 +3,10 @@ class PinsController < ApplicationController
   	@pins = Pin.scoped
   end
 
+  def load
+    @pins = Pin.scoped.page(params[:pins_page]).per(3)
+  end
+
   def new
   	@pin = Pin.new
   end

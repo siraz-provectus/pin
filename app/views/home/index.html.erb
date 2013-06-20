@@ -6,11 +6,14 @@
 <div>
 	<h3> Все новости </h3>
 </div>
-<div id = 'paginator'>
-  <%= paginate @pins, params: {controller: 'home', action: 'paginate_pins'},param_name: :pins_page, remote: true %>
+
+<div id='paginator'>
+  <%= paginate @pins, params: { controller: 'pins', action: 'load' },
+    param_name: :pins_page, remote: true %>
 </div>
-<div id = 'allpins'>
-	<%= render 'home/allpins', pins: @pins %>
+
+<div id='allpins'>
+	<%= render 'pins/pins', pins: @pins %>
 </div>
 
 <%= content_for :javascript_code do %>
