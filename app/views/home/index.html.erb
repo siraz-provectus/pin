@@ -1,14 +1,16 @@
 <% if user_signed_in? %>
-  <%= render 'shared/signed_user'%>
+  <%#= render 'shared/signed_user'%>
 <% else %>
   <%= render 'shared/unsigned_user'%>
 <% end %>
+<div id="newPinModal" class="modal fade">
+</div>
 <div>
 	<h3> Все новости </h3>
 </div>
 
 <div id='paginator'>
-  <%= paginate @pins, params: { controller: 'pins', action: 'load' },
+  <%#= paginate @pins, params: { controller: 'pins', action: 'load' },
     param_name: :pins_page, remote: true %>
 </div>
 
@@ -16,6 +18,11 @@
 	<%= render 'pins/pins', pins: @pins %>
 </div>
 
+<nav id="page-nav">
+  <%= link_to '',load_pins_url(pins_page:2)%>
+</nav>
+
 <%= content_for :javascript_code do %>
-  CommentsManagement.initialize();
+    MasonaryLoad.load();
+    CommentsManagement.initialize();
 <% end %>

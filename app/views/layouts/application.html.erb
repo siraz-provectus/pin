@@ -16,14 +16,10 @@
   </head>
   <body class = "back_color">
     <%= render "shared/components/nav_bar" %>
-    <div class="container">
-      <div class="row">
-        <div class="span9">
+    <div class="container" id="pins_contein">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
-        <%= render "shared/components/side_bar" %>
-    </div>
+        <%#= render "shared/components/side_bar" %>
       <%= render "shared/components/footer" %>
     </div> <!-- /container -->
 

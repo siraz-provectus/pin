@@ -1,4 +1,4 @@
-<div class="well span pin_block top_margin" id="<%= dom_id(pin) %>">
+<div class="well span pin_block" id="<%= dom_id(pin) %>">
   <%= link_to "Купить", pin.url, class: "btn btn-warning",target: :blank%><br><br>
   <%= image_tag(pin.image_url(:thumb), class: "thumbnail") if pin.image? %>
   <h6 class="well pin_title">

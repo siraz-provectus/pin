@@ -1,7 +1,7 @@
 <% if current_user.friendships.count > 0 %>
   <h3>Новости от друзей</h3>
 
-  <%= paginate @friendpins, params: { controller: 'friendships', action: 'load' },
+  <%#= paginate @friendpins, params: { controller: 'friendships', action: 'load' },
     param_name: :friend_page, remote: true %>
 
   <div id='friendpins'>

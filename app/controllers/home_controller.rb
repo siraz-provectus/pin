@@ -10,10 +10,10 @@ class HomeController < ApplicationController
 			Pin.scoped
 		end
 
-		@pins = pins.page(params[:pins_page]).per(3)
+		@pins = pins.page(params[:pins_page]).per(10)
 		
 		if user_signed_in? 
-		  @friendpins = current_user.friendpins.order("created_at DESC").page(params[:friend_page]).per(3)
+		  @friendpins = current_user.friendpins.order("created_at DESC").page(params[:friend_page]).per(5)
 		end
 	end
 end

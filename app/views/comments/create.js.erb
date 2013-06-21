@@ -3,3 +3,5 @@ $( "#pin_<%= @comment.pin_id %> .comments_container form" ).before("<%= escape_j
 )) %>");
 
 $( "#pin_<%= @comment.pin_id %> .comments_container form textarea" ).val('');
+$( "#pin_<%= @comment.pin_id %> .comments_container form input" ).addClass('hidden');
+$('#pins_contein').masonry('reload');

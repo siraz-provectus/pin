@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   end
 
   def load
-    @pins = Pin.scoped.page(params[:pins_page]).per(3)
+    @pins = Pin.scoped.page(params[:pins_page]).per(10)
   end
 
   def new
@@ -13,10 +13,6 @@ class PinsController < ApplicationController
 
   def create
   	@pin = current_user.pins.build(params[:pin])
-  	if @pin.save
-  		redirect_to root_url
-  	else
-  		render 'new'
-  	end
+  	render 'new' unless @pin.save 
   end
 end
