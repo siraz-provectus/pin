@@ -7,18 +7,13 @@
 </div>
 <div id="urlModal" class="modal fade">
 </div>
-<%#<div>
-	<h3> Все новости </h3>
-</div> %>
 
 <div id='paginator'>
   <%#= paginate @pins, params: { controller: 'pins', action: 'load' },
     param_name: :pins_page, remote: true %>
 </div>
 
-<div id='allpins'>
-	<%= render 'pins/pins', pins: @pins %>
-</div>
+<%= render 'pins/pins', pins: @pins %>
 
 <nav id="page-nav">
   <% if @category.present? %>

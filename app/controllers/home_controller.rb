@@ -5,9 +5,9 @@ class HomeController < ApplicationController
 
 		pins = if params[:category_id].present?
 			@category = Category.find(params[:category_id])
-			@category.pins
+			@category.pins.order("created_at DESC")
 		else
-			Pin.scoped
+			Pin.scoped.order("created_at DESC")
 		end
 
 		@pins = pins.page(params[:pins_page]).per(10)
