@@ -8,6 +8,7 @@ PinClone::Application.routes.draw do
   end
   resources :pins, only: [:index, :new, :create] do
     get :load, on: :collection
+    get :url_load, on: :collection
     resources :comments, only: [:create]
   end
   resources :comments, only: [:destroy]

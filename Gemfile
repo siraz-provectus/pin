@@ -6,7 +6,7 @@ gem 'russian'
 gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
-
+gem 'nokogiri'
 
 group :assets do
   gem 'mysql2'

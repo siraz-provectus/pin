@@ -38,4 +38,6 @@
 	margin-top: -27px;
 	float: right;
 }
- 
+.btn-info.block{
+	display: block;
+}

@@ -1,0 +1,27 @@
+<%= form_tag new_pin_url, remote: true, method: :get, class: 'new_pin' do%>
+  <h4 class ="bottom_margin"> Добавть вещь из интернет магазина </h4>
+  <div class="page-header add_url"></div>
+ 
+  <div><%= label_tag "Введите ссылку" %>
+  <%= text_field_tag :surl, params[:surl], placeholder: 'http://  ', 
+  class: '_left search_rigt inp_width' %></div>
+
+  <div><%= button_tag "Далее", class: "btn",disabled: true %>
+  </div>
+<% end %>
+
+<script>
+    $( '#surl' ).on( 'keyup', function () { 
+	  var reg = /(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/;
+    var url = $(this).val();
+    var submit_button = $(this).parents('form').find('button[type="submit"]');
+
+    if (reg.test(url)) {
+        submit_button.removeAttr("disabled");
+        submit_button.addClass("btn-info");
+	  } else {
+        submit_button.attr("disabled", "disabled");
+        submit_button.removeClass("btn-info");
+	  }
+	});
+</script>

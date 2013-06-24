@@ -2,7 +2,7 @@
   <div class="navbar-inner">
     <div class="container">
       <div class="nav-collapse collapse navbar-inverse-collapse">
-        <%= form_tag search_path, class: 'navbar-search pull-left', :method => :get do %>
+        <%= form_tag search_path, class: 'navbar-search pull-left', method: :get do %>
             <%= text_field_tag :query, params[:query], placeholder: "Поиск", class: "search-query span2 search_rigt" %>
         <% end %>
         <%= link_to 'PinClone', root_url,  class: "brand" %>
@@ -23,7 +23,7 @@
               </ul>
             </li>
           <% if user_signed_in? %>
-            <li><%= link_to 'Добавить+', new_pin_url, remote: true %></li>
+            <li><%= link_to 'Добавить+', url_load_pins_url, remote: true %></li>
             <li class="divider-vertical"></li>
           <% end %>
           <li class="dropdown">

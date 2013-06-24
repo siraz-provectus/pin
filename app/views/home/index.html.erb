@@ -5,9 +5,11 @@
 <% end %>
 <div id="newPinModal" class="modal fade">
 </div>
-<div>
-	<h3> Все новости </h3>
+<div id="urlModal" class="modal fade">
 </div>
+<%#<div>
+	<h3> Все новости </h3>
+</div> %>
 
 <div id='paginator'>
   <%#= paginate @pins, params: { controller: 'pins', action: 'load' },
@@ -19,7 +21,11 @@
 </div>
 
 <nav id="page-nav">
-  <%= link_to '',load_pins_url(pins_page:2)%>
+  <% if @category.present? %>
+    <%= link_to '',load_pins_url(pins_page:2, category_id: @category.id)%>
+  <% else %>
+    <%= link_to '',load_pins_url(pins_page:2)%>
+  <% end %>
 </nav>
 
 <%= content_for :javascript_code do %>
