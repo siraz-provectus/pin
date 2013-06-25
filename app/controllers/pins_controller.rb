@@ -15,7 +15,51 @@ class PinsController < ApplicationController
   end
 
   def new
-    @doc = Nokogiri::HTML(open(params[:surl]))
+    @images = []
+    doc = Nokogiri::HTML(open(params[:surl]))
+    if params[:surl].include?('ozon.ru')
+      site = 'ozon.ru'
+    end
+    if params[:surl].include?('feelunique.com')
+      site = 'feelunique.com'
+    end
+    if params[:surl].include?('yoox.com')
+      site = 'yoox.com'
+    end
+    if params[:surl].include?('asos.com')
+      site = 'asos.com'
+    end
+
+    case site
+      when 'ozon.ru'
+        if doc.at_css('#detailGalleryMini .l-gallery .gallery-items .gallery-group').present?
+          doc.css('#detailGalleryMini .l-gallery .gallery-items .gallery-group ul img').each do |image|
+            @images << image.attributes["src"].value.gsub("l60", "c200")
+          end
+        else
+          doc.css('#detailGalleryMini .l-img img').each do |image|
+              @images << image.attributes["src"].value
+          end
+        end
+      when 'feelunique.com'
+        doc.css('.main-image').each do |image|
+          @images << image.attributes["src"].value
+        end
+      when 'yoox.com'
+        doc.css('#itemThumbs img').each do |image|
+          @images << image.attributes["src"].value.gsub("_9_", "_10_")
+        end
+      when 'asos.com'
+        @images << doc.at_css('#mainView img').attributes["src"].value
+        doc.css('#additionalViews img').each do |image|
+          @images << image.attributes["src"].value.gsub("small", "large")
+        end
+      else
+        doc.css("img").each do |image|
+          @images << image.attributes["src"].value
+        end
+    end
+
   	@pin = Pin.new
   end
   

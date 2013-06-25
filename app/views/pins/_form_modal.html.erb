@@ -19,7 +19,7 @@
 
   <div><%= f.submit "Добавить", class: "btn btn-info" %>
   </div>
-  <% @doc.css("img").each do |image| %>
-    <%= image_tag(image.attributes["src"].value) %> <br />
-  <% end %>
+    <% @images.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
 <% end %>
