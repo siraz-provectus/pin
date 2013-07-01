@@ -41,3 +41,9 @@
 .btn-info.block{
 	display: block;
 }
+.hide {
+    display: none;
+}
+._right{
+	float: right;
+}

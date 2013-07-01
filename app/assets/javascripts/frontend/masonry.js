@@ -5,7 +5,7 @@ var MasonaryLoad = window.MasonaryLoad = {
     $container.imagesLoaded(function(){
       $container.masonry({
         itemSelector: '.pin_block',
-        columnWidth: 210,
+        columnWidth: 234,
         isAnimated: true
       });
     });

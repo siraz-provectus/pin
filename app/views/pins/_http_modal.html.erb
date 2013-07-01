@@ -4,24 +4,8 @@
  
   <div><%= label_tag "Введите ссылку" %>
   <%= text_field_tag :surl, params[:surl], placeholder: 'http://  ', 
-  class: '_left search_rigt inp_width' %></div>
+  class: '_left search_rigt inp_width',  autocomplete: :off %></div>
 
   <div><%= button_tag "Далее", class: "btn",disabled: true %>
   </div>
 <% end %>
-
-<script>
-    $( '#surl' ).on( 'keyup', function () { 
-	  var reg = /(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/;
-    var url = $(this).val();
-    var submit_button = $(this).parents('form').find('button[type="submit"]');
-
-    if (reg.test(url)) {
-        submit_button.removeAttr("disabled");
-        submit_button.addClass("btn-info");
-	  } else {
-        submit_button.attr("disabled", "disabled");
-        submit_button.removeClass("btn-info");
-	  }
-	});
-</script>

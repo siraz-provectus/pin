@@ -7,6 +7,7 @@ gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
 gem 'nokogiri'
+gem 'mechanize'
 
 group :assets do
   gem 'mysql2'

@@ -1,25 +1,30 @@
 <%= form_for @pin, remote: true  do |f| %>
+  <%= f.hidden_field :remote_image_url %>
+
   <h2>Добавление нового ПИНа</h2>
-  
-  <div><%= f.label :title, "Название" %><br />
-  <%= f.text_field :title, :autofocus => true %></div>
+  <div id="imgUrl" class='_right' style="width: 200px; border: 1px solid; margin-right: 40px;">
+    <% @images.each do |image| %>
+      <%= image_tag(image, class: 'hide') %>
+    <% end %>
+    <label id='nimg' class='_left' style="margin-left: 80px;">1 из </label>
+    <label id='sum' style="margin-left: 110px;"></label>
+    <label id='prev' class='_left'>Предыдущая</label>
+    <label id='next' class='_right'style: 'margin-right: 40px;'>Следующая</label>
+  </div>
 
-  <div><%#= f.label :image, "Фото" %><br />
-  <%#= f.file_field :image %></div>
+  <div><%= f.label :title, "Название" %>
+  <%= f.text_field :title, :autofocus => true, value: @title_img%></div>
 
-  <div><%= f.label :category_ids, 'Категория' %><br />
+  <div><%= f.label :category_ids, 'Категория' %>
     <%= f.collection_select(:category_ids, Category.all,
                   :id, :title, {prompt: 'Выберите категорию'})%></div>
 
-  <div><%= f.label :price, "Цена" %><br />
+  <div><%= f.label :price, "Цена" %>
   <%= f.text_field :price %></div>
 
-  <div><%= f.label :url, "Ссылка" %><br />
-  <%= f.text_field :url %></div>
+  <div><%= f.label :url, "Ссылка" %>
+  <%= f.text_field :url, value: @url_img %></div><br />
 
-  <div><%= f.submit "Добавить", class: "btn btn-info" %>
+  <div><%= f.submit "Добавить", class: "btn btn-info sub_pin" %>
   </div>
-    <% @images.each do |image| %>
-      <%= image_tag(image) %>
-    <% end %>
 <% end %>

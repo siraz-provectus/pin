@@ -1,1 +1,16 @@
 $('#urlModal').modal().html("<%= escape_javascript(render('http_modal')) %>");
+$( '#surl' ).on( 'keyup', function () { 
+  var reg = /(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/;
+  var url = $(this).val();
+  var submit_button = $(this).parents('form').find('button[type="submit"]');
+
+  if (reg.test(url)) {
+    submit_button.removeAttr("disabled");
+    submit_button.addClass("btn-info");
+	
+  } 
+  else {
+    submit_button.attr("disabled", "disabled");
+    submit_button.removeClass("btn-info");
+  }
+});
