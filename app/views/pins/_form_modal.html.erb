@@ -15,14 +15,14 @@
   <div><%= f.label :title, "Название" %>
   <%= f.text_field :title, :autofocus => true, value: @title_img%></div>
 
-  <div><%= f.label :category_ids, 'Категория' %>
+  <div><%= f.label :category_ids, 'Категория', class: "up_margin" %>
     <%= f.collection_select(:category_ids, Category.all,
                   :id, :title, {prompt: 'Выберите категорию'})%></div>
 
-  <div><%= f.label :price, "Цена" %>
+  <div><%= f.label :price, "Цена", class: "up_margin" %>
   <%= f.text_field :price %></div>
 
-  <div><%= f.label :url, "Ссылка" %>
+  <div><%= f.label :url, "Ссылка", class: "up_margin" %>
   <%= f.text_field :url, value: @url_img %></div><br />
 
   <div><%= f.submit "Добавить", class: "btn btn-info sub_pin" %>

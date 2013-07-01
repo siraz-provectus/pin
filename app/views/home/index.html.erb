@@ -1,9 +1,9 @@
-<% if user_signed_in? %>
+ <% if user_signed_in? %>
   <%#= render 'shared/signed_user'%>
 <% else %>
   <%= render 'shared/unsigned_user'%>
 <% end %>
-<div id="newPinModal" class="modal fade pin_div">
+<div id="newPinModal" class="modal fade">
 </div>
 <div id="urlModal" class="modal fade">
 </div>
@@ -12,8 +12,9 @@
   <%#= paginate @pins, params: { controller: 'pins', action: 'load' },
     param_name: :pins_page, remote: true %>
 </div>
-
-<%= render 'pins/pins', pins: @pins %>
+<div id="pins_contein">
+  <%= render 'pins/pins', pins: @pins %>
+</div>
 
 <nav id="page-nav">
   <% if @category.present? %>

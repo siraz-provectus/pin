@@ -47,3 +47,11 @@
 ._right{
 	float: right;
 }
+.wellcome{
+	width: 700px; 
+	margin-left: 260px; 
+	margin-top: 20px;
+}
+.up_margin{
+	margin-top: 20px;
+}
