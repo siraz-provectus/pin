@@ -1,0 +1,3 @@
+doc.css('#ctl00_ContentMainPage_pnlThumbImages .productThumbnails img').each do |image|
+	          images_url << image.attributes["src"].value.gsub("s.jpg", "xl.jpg")
+	        end
