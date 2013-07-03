@@ -8,6 +8,9 @@ gem "rmagick"
 gem 'kaminari'
 gem 'nokogiri'
 gem 'mechanize'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 
 group :assets do
   gem 'mysql2'
